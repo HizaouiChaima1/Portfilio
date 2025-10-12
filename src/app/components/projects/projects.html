@@ -1,0 +1,250 @@
+<section id="projects" class="projects-section">
+  <!-- Background avec effets de code -->
+  <div class="code-matrix">
+    <div class="code-line" *ngFor="let line of codeLines" [style.left]="line.position + '%'"
+      [style.animation-delay]="line.delay + 's'">
+      <span class="code-char" *ngFor="let char of line.chars">{{ char }}</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" data-animate="fade-up">Mes Projets</h2>
+      <p class="section-subtitle" data-animate="fade-up" data-delay="200">Réalisations techniques & innovations</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1: Object Detection -->
+      <div class="project-card" data-animate="zoom-in" data-delay="300">
+        <div class="project-header">
+          <div class="project-badge">IA Vision</div>
+          <div class="project-year">2024</div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">Object Detection Website</h3>
+          <p class="project-description">
+            Application web de détection d'objets utilisant un modèle YOLOv5 personnalisé.
+            Interface Streamlit avec base de données MySQL pour le suivi des détections.
+          </p>
+
+          <div class="project-features">
+            <div class="feature">
+              <span class="feature-icon">🎯</span>
+              <span>Dataset personnalisé</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🤖</span>
+              <span>Modèle YOLOv5 entraîné</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">📊</span>
+              <span>Interface Streamlit</span>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag python">Python</span>
+            <span class="tech-tag yolo">YOLOv5</span>
+            <span class="tech-tag streamlit">Streamlit</span>
+            <span class="tech-tag mysql">MySQL</span>
+          </div>
+        </div>
+
+        <div class="project-visual">
+          <div class="visual-container">
+            <div class="neural-network">
+              <div class="node" *ngFor="let node of neuralNodes" [style.left]="node.x + '%'" [style.top]="node.y + '%'">
+              </div>
+              <div class="connection" *ngFor="let conn of connections"></div>
+            </div>
+            <div class="detection-preview">
+              <div class="bounding-box" *ngFor="let box of boundingBoxes" [style.left]="box.x + '%'"
+                [style.top]="box.y + '%'" [style.width]="box.width + '%'" [style.height]="box.height + '%'">
+                <span class="object-label">{{ box.label }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary" (click)="showProjectDetails('object-detection')">
+            <span class="btn-icon">🔍</span>
+            Voir les détails
+          </button>
+          <button class="btn btn-secondary">
+            <span class="btn-icon">📁</span>
+            Code Source
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 2: RGB Game -->
+      <div class="project-card" data-animate="zoom-in" data-delay="500">
+        <div class="project-header">
+          <div class="project-badge">Gaming AI</div>
+          <div class="project-year">2024</div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">RGB Game 3D</h3>
+          <p class="project-description">
+            Jeu 3D multiplateforme avec composant IA. Environnement immersif et mécaniques
+            de jeu avancées développées avec Unity.
+          </p>
+
+          <div class="project-features">
+            <div class="feature">
+              <span class="feature-icon">🎮</span>
+              <span>PC & Mobile</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🧠</span>
+              <span>Composant IA</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">⚡</span>
+              <span>Performance optimisée</span>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag csharp">C#</span>
+            <span class="tech-tag unity">Unity</span>
+            <span class="tech-tag ai">AI</span>
+            <span class="tech-tag threed">3D</span>
+          </div>
+        </div>
+
+        <div class="project-visual">
+          <div class="game-preview">
+            <div class="game-character">
+              <div class="character-body"></div>
+              <div class="character-glow"></div>
+            </div>
+            <div class="game-environment">
+              <div class="platform" *ngFor="let platform of gamePlatforms" [style.left]="platform.x + '%'"
+                [style.bottom]="platform.y + '%'"></div>
+            </div>
+            <div class="particle-system">
+              <div class="particle" *ngFor="let particle of gameParticles" [style.left]="particle.x + '%'"
+                [style.top]="particle.y + '%'" [style.background]="particle.color"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary" (click)="showProjectDetails('rgb-game')">
+            <span class="btn-icon">🎮</span>
+            Voir démo
+          </button>
+          <button class="btn btn-secondary">
+            <span class="btn-icon">📱</span>
+            Télécharger
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 3: Club Management -->
+      <div class="project-card" data-animate="zoom-in" data-delay="700">
+        <div class="project-header">
+          <div class="project-badge">Mobile App</div>
+          <div class="project-year">2023</div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">Club Management App</h3>
+          <p class="project-description">
+            Application Android pour la gestion des clubs ISAMM. Système d'authentification
+            et stockage local des données avec synchronisation Firebase.
+          </p>
+
+          <div class="project-features">
+            <div class="feature">
+              <span class="feature-icon">🔐</span>
+              <span>Authentification</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">💾</span>
+              <span>Stockage local</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">☁️</span>
+              <span>Sync Firebase</span>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag java">Java</span>
+            <span class="tech-tag sqlite">SQLite</span>
+            <span class="tech-tag firebase">Firebase</span>
+            <span class="tech-tag android">Android</span>
+          </div>
+        </div>
+
+        <div class="project-visual">
+          <div class="mobile-preview">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="app-header">
+                  <div class="app-icon">🏢</div>
+                  <span class="app-title">ISAMM Clubs</span>
+                </div>
+                <div class="app-content">
+                  <div class="club-item" *ngFor="let club of clubs" [style.animation-delay]="club.delay + 's'">
+                    <span class="club-icon">{{ club.icon }}</span>
+                    <span class="club-name">{{ club.name }}</span>
+                    <div class="club-members">{{ club.members }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary" (click)="showProjectDetails('club-app')">
+            <span class="btn-icon">📱</span>
+            Voir l'app
+          </button>
+          <button class="btn btn-secondary">
+            <span class="btn-icon">⚙️</span>
+            Architecture
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats des projets -->
+    <div class="projects-stats" data-animate="fade-up" data-delay="900">
+      <div class="stat-card">
+        <div class="stat-value">+3</div>
+        <div class="stat-label">Projets Complets</div>
+        <div class="stat-graph">
+          <div class="graph-bar" style="width: 100%"></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">8+</div>
+        <div class="stat-label">Technologies</div>
+        <div class="stat-graph">
+          <div class="graph-bar" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Domaines IA</div>
+        <div class="stat-graph">
+          <div class="graph-bar" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Fonctionnels</div>
+        <div class="stat-graph">
+          <div class="graph-bar" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

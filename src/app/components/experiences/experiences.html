@@ -1,0 +1,259 @@
+<section id="experience" class="experience-section">
+  <!-- Background avec timeline animée -->
+  <div class="timeline-background">
+    <div class="timeline-line"></div>
+    <div class="timeline-node" *ngFor="let node of timelineNodes" 
+         [style.left]="node.position + '%'"
+         [style.animation-delay]="node.delay + 's'"></div>
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title" data-animate="fade-up">Experiences</h2>
+    </div>
+
+    <div class="experiences-grid">
+      <!-- Expérience 1: Tunisie Télécom -->
+      <div class="experience-card" data-animate="fade-right" data-delay="300">
+        <div class="experience-header">
+          <div class="company-info">
+            <div class="company-logo telecom">🏢</div>
+            <div class="company-details">
+              <h3 class="company-name">Tunisie Télécom</h3>
+              <p class="company-industry">Télécommunications</p>
+            </div>
+          </div>
+          <div class="experience-period">
+            <span class="period-badge">Juillet – Août 2025</span>
+            <div class="period-dot"></div>
+          </div>
+        </div>
+
+        <div class="experience-content">
+          <h4 class="role-title">Full-Stack Web Developer Intern</h4>
+          <p class="role-description">
+            Développement d'une application web complète pour la gestion de rapports médicaux
+          </p>
+
+          <div class="achievements">
+            <div class="achievement">
+              <span class="achievement-icon">⚡</span>
+              <span>Développement d'APIs REST avec Spring Boot</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">🎯</span>
+              <span>Interface front-end dynamique avec Angular</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">🚀</span>
+              <span>Tests et déploiement local</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="preview-header">
+              <span class="preview-title">Medical Reports Manager</span>
+              <div class="preview-status">
+                <div class="status-dot"></div>
+                <span>Complété</span>
+              </div>
+            </div>
+            <div class="preview-visual">
+              <div class="code-window">
+                <div class="window-header">
+                  <div class="window-controls">
+                    <div class="control red"></div>
+                    <div class="control yellow"></div>
+                    <div class="control green"></div>
+                  </div>
+                  <span class="window-title">MedicalReportService.java</span>
+                </div>
+                <div class="code-content">
+                  <div class="code-line" *ngFor="let line of telecomCode"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag angular">Angular</span>
+            <span class="tech-tag spring">Spring Boot</span>
+            <span class="tech-tag typescript">TypeScript</span>
+            <span class="tech-tag java">Java</span>
+            <span class="tech-tag mysql">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expérience 2: Viore Digital -->
+      <div class="experience-card" data-animate="fade-left" data-delay="500">
+        <div class="experience-header">
+          <div class="company-info">
+            <div class="company-logo digital">💻</div>
+            <div class="company-details">
+              <h3 class="company-name">Viore Digital</h3>
+              <p class="company-industry">Solutions Digitales</p>
+            </div>
+          </div>
+          <div class="experience-period">
+            <span class="period-badge">Février – Juin 2024</span>
+            <div class="period-dot"></div>
+          </div>
+        </div>
+
+        <div class="experience-content">
+          <h4 class="role-title">Web Developer Intern</h4>
+          <p class="role-description">
+            Conception et implémentation d'une solution digitale de gestion de restaurant
+          </p>
+
+          <div class="achievements">
+            <div class="achievement">
+              <span class="achievement-icon">📊</span>
+              <span>Analyse des besoins & design UX/UI</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">🔒</span>
+              <span>Collaboration sécurisée et gestion des notifications</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">🎨</span>
+              <span>Développement back-end et front-end</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="preview-header">
+              <span class="preview-title">Restaurant Management System</span>
+              <div class="preview-status">
+                <div class="status-dot"></div>
+                <span>Complété</span>
+              </div>
+            </div>
+            <div class="preview-visual">
+              <div class="design-process">
+                <div class="process-step" *ngFor="let step of designSteps">
+                  <div class="step-icon">{{ step.icon }}</div>
+                  <span class="step-label">{{ step.label }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag laravel">Laravel</span>
+            <span class="tech-tag jquery">jQuery</span>
+            <span class="tech-tag bootstrap">Bootstrap</span>
+            <span class="tech-tag mysql">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expérience 3: Hannibal Lease -->
+      <div class="experience-card" data-animate="fade-right" data-delay="700">
+        <div class="experience-header">
+          <div class="company-info">
+            <div class="company-logo lease">🏦</div>
+            <div class="company-details">
+              <h3 class="company-name">Hannibal Lease</h3>
+              <p class="company-industry">Finance & Location</p>
+            </div>
+          </div>
+          <div class="experience-period">
+            <span class="period-badge">Juillet – Août 2022</span>
+            <div class="period-dot"></div>
+          </div>
+        </div>
+
+        <div class="experience-content">
+          <h4 class="role-title">IT Support & Client Services</h4>
+          <p class="role-description">
+            Support technique et service client dans un environnement financier
+          </p>
+
+          <div class="achievements">
+            <div class="achievement">
+              <span class="achievement-icon">📋</span>
+              <span>Revue des demandes de location</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">🔐</span>
+              <span>Maintenance de la sécurité des données</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-icon">💬</span>
+              <span>Support client et assistance technique</span>
+            </div>
+          </div>
+
+          <div class="project-preview">
+            <div class="preview-header">
+              <span class="preview-title">Client Service Operations</span>
+              <div class="preview-status">
+                <div class="status-dot"></div>
+                <span>Complété</span>
+              </div>
+            </div>
+            <div class="preview-visual">
+              <div class="support-dashboard">
+                <div class="metric" *ngFor="let metric of supportMetrics">
+                  <div class="metric-value">{{ metric.value }}</div>
+                  <div class="metric-label">{{ metric.label }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag support">Support IT</span>
+            <span class="tech-tag client">Service Client</span>
+            <span class="tech-tag security">Sécurité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline horizontale -->
+    <div class="experience-timeline" data-animate="fade-up" data-delay="900">
+      <div class="timeline-track">
+        <div class="timeline-item" *ngFor="let item of timelineItems">
+          <div class="timeline-year">{{ item.year }}</div>
+          <div class="timeline-role">{{ item.role }}</div>
+          <div class="timeline-company">{{ item.company }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistiques d'expérience -->
+    <div class="experience-stats" data-animate="fade-up" data-delay="1100">
+      <div class="stat-card">
+        <div class="stat-icon">💼</div>
+        <div class="stat-content">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Expériences</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div class="stat-content">
+          <div class="stat-value">8+</div>
+          <div class="stat-label">Mois</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-content">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-content">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

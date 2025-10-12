@@ -1,0 +1,81 @@
+:root {
+ 
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --text: #2d3748;
+  --text-secondary: #4a5568;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-light {
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --text: #2d3748;
+  --text-secondary: #4a5568;
+}
+
+.theme-dark {
+  --primary: #8b5cf6;
+  --secondary: #a78bfa;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --text: #f1f5f9;
+  --text-secondary: #cbd5e1;
+}
+
+.theme-purple {
+  --primary: #a855f7;
+  --secondary: #c084fc;
+  --background: #faf5ff;
+  --surface: #f3e8ff;
+  --text: #581c87;
+  --text-secondary: #7c3aed;
+}
+
+.theme-blue {
+  --primary: #3b82f6;
+  --secondary: #60a5fa;
+  --background: #f0f9ff;
+  --surface: #e0f2fe;
+  --text: #1e40af;
+  --text-secondary: #3b82f6;
+}
+
+.theme-pink {
+  --primary: #ec4899;
+  --secondary: #f472b6;
+  --background: #fdf2f8;
+  --surface: #fce7f3;
+  --text: #9d174d;
+  --text-secondary: #db2777;
+}
+
+.theme-transition {
+  &, * {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease !important;
+  }
+}
