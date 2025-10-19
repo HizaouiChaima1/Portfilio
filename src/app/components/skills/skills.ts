@@ -12,7 +12,7 @@ interface Skill {
 
 interface Tool {
   name: string;
-  icon: string;
+  image: string;
   category?: string;
 }
 
@@ -49,14 +49,14 @@ export class SkillsComponent implements OnInit, AfterViewInit {
   ];
 
   toolSkills: Tool[] = [
-    { name: 'VS Code', icon: '📝', category: 'Éditeur' },
-    { name: 'Eclipse', icon: '🌑', category: 'IDE' },
-    { name: 'Android Studio', icon: '🤖', category: 'IDE Mobile' },
-    { name: 'Unity', icon: '🎮', category: 'Moteur Jeu' },
-    { name: 'Figma', icon: '🎯', category: 'Design' },
-    { name: 'Illustrator', icon: '✏️', category: 'Design' },
-    { name: 'Photoshop', icon: '🖼️', category: 'Design' },
-    { name: 'Git', icon: '🔀', category: 'Versioning' }
+    { name: 'VS Code', image: 'vs.png', category: 'Éditeur' },
+    { name: 'Eclipse', image: 'e1.webp', category: 'IDE' },
+    { name: 'Android Studio',  image: 'a.png', category: 'IDE Mobile' },
+    { name: 'Unity',  image: 'u.png', category: 'Moteur Jeu' },
+    { name: 'Figma',  image: 'fr.png', category: 'Design' },
+    { name: 'Illustrator', image: 'ad_r.png', category: 'Design' },
+    { name: 'Photoshop',  image: 'ps.png', category: 'Design' },
+    { name: 'Git', image: 'git_r.png', category: 'Versioning' }
   ];
 
   globalLevel = 0;

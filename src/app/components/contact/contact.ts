@@ -1,6 +1,4 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
 interface ContactMethod {
   icon: string;
   title: string;
@@ -16,11 +14,17 @@ interface SocialLinks {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './contact.html',
   styleUrls: ['./contact.css']
 })
 export class ContactComponent implements OnInit {
+  // États réactifs
+  isLoading = signal(false);
+  isSuccess = signal(false);
+  isError = signal(false);
+  errorMessage = signal('');
+
   contactMethods: ContactMethod[] = [
     {
       icon: '📧',
@@ -29,9 +33,14 @@ export class ContactComponent implements OnInit {
       link: 'mailto:chaimahizaoui26@gmail.com'
     },
     {
+      icon: '📱',
+      title: 'Téléphone',
+      value: '+216 26 100 720'
+    },
+    {
       icon: '💼',
       title: 'LinkedIn',
-      value: 'Chaima Hizaoui',
+      value: 'Profil Professionnel',
       link: 'https://www.linkedin.com/in/chaima-hizaoui/'
     },
     {
@@ -41,13 +50,18 @@ export class ContactComponent implements OnInit {
       link: 'https://github.com/HizaouiChaima1'
     }
   ];
-  // Données du formulaire
-  formData = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+
+  socialLinks: SocialLinks = {
+    linkedin: 'https://www.linkedin.com/in/chaima-hizaoui/',
+    github: 'https://github.com/HizaouiChaima1'
   };
+
+  particles = Array.from({ length: 15 }, (_, i) => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+    color: this.getRandomColor()
+  }));
 
   ngOnInit() {
     this.initAnimations();
@@ -77,40 +91,7 @@ export class ContactComponent implements OnInit {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  onSubmit() {
-    if (this.formData.name && this.formData.email && this.formData.subject && this.formData.message) {
-      // Simulation d'envoi du formulaire
-      console.log('Formulaire envoyé:', this.formData);
-
-      // Ici vous intégrerez votre service d'envoi d'email
-      // Par exemple: this.emailService.send(this.formData).subscribe(...)
-
-      // Réinitialisation du formulaire
-      this.formData = { name: '', email: '', subject: '', message: '' };
-
-      // Message de succès
-      alert('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
-    }
-  }
-
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Getters pour la validation du formulaire
-  get name() {
-    return { invalid: !this.formData.name, touched: true };
-  }
-
-  get email() {
-    return { invalid: !this.formData.email, touched: true };
-  }
-
-  get subject() {
-    return { invalid: !this.formData.subject, touched: true };
-  }
-
-  get message() {
-    return { invalid: !this.formData.message, touched: true };
   }
 }

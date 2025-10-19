@@ -8,14 +8,14 @@
 
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title" data-animate="fade-up">My Skills</h2>
+      <h2 class="section-title" data-animate="fade-up">Skills</h2>
     </div>
 
     <div class="skills-grid">
       <!-- Langages de Programmation -->
-      <div class="skill-category" data-animate="fade-right">
+      <div class="skill-category" data-animate="fade-up">
         <div class="category-header">
-          <div class="category-icon">💻</div>
+
           <h3>Langages</h3>
           <div class="category-pulse"></div>
         </div>
@@ -46,9 +46,9 @@
       </div>
 
       <!-- Développement Web -->
-      <div class="skill-category" data-animate="fade-left">
+      <div class="skill-category" data-animate="fade-up" data-delay="100">
         <div class="category-header">
-          <div class="category-icon">🌐</div>
+
           <h3>Web Development</h3>
           <div class="category-pulse"></div>
         </div>
@@ -74,9 +74,8 @@
       </div>
 
       <!-- Frameworks -->
-      <div class="skill-category" data-animate="fade-right" data-delay="100">
+      <div class="skill-category" data-animate="fade-up" data-delay="200">
         <div class="category-header">
-          <div class="category-icon">⚙️</div>
           <h3>Frameworks</h3>
           <div class="category-pulse"></div>
         </div>
@@ -107,31 +106,27 @@
       </div>
 
       <!-- Outils -->
-
-    </div>
-      <div class="skills-grid">
-    <div class="skill-category" data-animate="fade-left" data-delay="100">
-      <div class="category-header">
-        <div class="category-icon">🛠️</div>
-        <h3>Outils & Logiciels</h3>
-        <div class="category-pulse"></div>
-      </div>
-      <div class="skills-list compact">
-        @for (tool of toolSkills; track tool.name; let i = $index) {
-        <div class="tool-badge" data-animate="zoom-in" [attr.data-delay]="i * 80 + 600"
-          (mouseenter)="animateTool($event, tool)" (mouseleave)="resetTool($event)">
-          <span class="tool-icon">{{ tool.icon }}</span>
-          <span class="tool-name">{{ tool.name }}</span>
-          @if (tool.category) {
-          <span class="tool-category">{{ tool.category }}</span>
-          }
-          <div class="tool-orb"></div>
+      <div class="skill-category" data-animate="fade-up" data-delay="300">
+        <div class="category-header">
+          <h3>Outils & Logiciels</h3>
+          <div class="category-pulse"></div>
         </div>
-        }
+        <div class="skills-list compact">
+          @for (tool of toolSkills; track tool.name; let i = $index) {
+          <div class="tool-badge" data-animate="zoom-in" [attr.data-delay]="i * 80 + 600"
+            (mouseenter)="animateTool($event, tool)" (mouseleave)="resetTool($event)">
+            <span class="tool-icon"><img [src]="tool.image" [alt]="tool.name" class="w-16 h-16 object-contain mb-2" />
+</span>
+            <span class="tool-name">{{ tool.name }}</span>
+            @if (tool.category) {
+            <span class="tool-category">{{ tool.category }}</span>
+            }
+            <div class="tool-orb"></div>
+          </div>
+          }
+        </div>
       </div>
     </div>
-  </div>
-
 
     <!-- Résumé des compétences avec animations -->
     <div class="skills-summary">
