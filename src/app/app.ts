@@ -7,7 +7,6 @@ import { AboutComponent } from './components/about/about';
 import { SkillsComponent } from './components/skills/skills';
 import { ProjectsComponent } from './components/projects/projects';
 import { ContactComponent } from './components/contact/contact';
-import { ExperiencesComponent } from './components/experiences/experiences';
 import { AnimationService } from './services/animation';
 @Component({
   selector: 'app-root',
@@ -16,8 +15,7 @@ import { AnimationService } from './services/animation';
     HeaderComponent,
     AboutComponent,
     SkillsComponent,    // Section Compétences
-    ProjectsComponent,
-    ExperiencesComponent,  
+    ProjectsComponent, 
     ContactComponent    // Section Contact
   ],
   template: `
@@ -33,8 +31,7 @@ import { AnimationService } from './services/animation';
         <!-- Section Compétences IA -->
         <app-skills></app-skills>
 
-          <app-experiences></app-experiences>
-        
+     
         <!-- Section Projets -->
         <app-projects></app-projects>
         

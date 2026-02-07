@@ -43,14 +43,6 @@ export class  ProjectsComponent implements OnInit {
     color: this.getRandomColor()
   }));
 
-  // Project 3: Club Management
-  clubs = [
-    { name: 'Tech Club', icon: '💻', members: '45 membres', delay: 0 },
-    { name: 'Robotics', icon: '🤖', members: '32 membres', delay: 0.2 },
-    { name: 'AI Lab', icon: '🧠', members: '28 membres', delay: 0.4 },
-    { name: 'Design', icon: '🎨', members: '36 membres', delay: 0.6 }
-  ];
-
   ngOnInit() {
     // Initialisation des animations
     setTimeout(() => {

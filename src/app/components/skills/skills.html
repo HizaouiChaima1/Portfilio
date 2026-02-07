@@ -15,30 +15,15 @@
       <!-- Langages de Programmation -->
       <div class="skill-category" data-animate="fade-up">
         <div class="category-header">
-
-          <h3>Langages</h3>
+          <h3>Languages</h3>
           <div class="category-pulse"></div>
         </div>
         <div class="skills-list">
           @for (skill of programmingSkills; track skill.name; let i = $index) {
-          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100"
-            (mouseenter)="animateSkill($event, skill)" (mouseleave)="resetSkill($event)">
+          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100">
             <div class="skill-main">
               <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-bar">
-                  <div class="level-fill" [style.width.%]="skill.level">
-                    <div class="level-sparkle"></div>
-                  </div>
-                </div>
-                <span class="level-text">{{ skill.level }}%</span>
-              </div>
             </div>
-            @if (skill.experience) {
-            <div class="skill-meta">
-              <span class="skill-experience">{{ skill.experience }}</span>
-            </div>
-            }
             <div class="skill-hover-effect"></div>
           </div>
           }
@@ -48,24 +33,14 @@
       <!-- Développement Web -->
       <div class="skill-category" data-animate="fade-up" data-delay="100">
         <div class="category-header">
-
           <h3>Web Development</h3>
           <div class="category-pulse"></div>
         </div>
         <div class="skills-list">
           @for (skill of webSkills; track skill.name; let i = $index) {
-          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100 + 200"
-            (mouseenter)="animateSkill($event, skill)" (mouseleave)="resetSkill($event)">
+          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100 + 200">
             <div class="skill-main">
               <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-bar">
-                  <div class="level-fill" [style.width.%]="skill.level">
-                    <div class="level-sparkle"></div>
-                  </div>
-                </div>
-                <span class="level-text">{{ skill.level }}%</span>
-              </div>
             </div>
             <div class="skill-hover-effect"></div>
           </div>
@@ -81,18 +56,9 @@
         </div>
         <div class="skills-list">
           @for (skill of frameworkSkills; track skill.name; let i = $index) {
-          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100 + 400"
-            (mouseenter)="animateSkill($event, skill)" (mouseleave)="resetSkill($event)">
+          <div class="skill-item" data-animate="fade-up" [attr.data-delay]="i * 100 + 400">
             <div class="skill-main">
               <span class="skill-name">{{ skill.name }}</span>
-              <div class="skill-level">
-                <div class="level-bar">
-                  <div class="level-fill" [style.width.%]="skill.level">
-                    <div class="level-sparkle"></div>
-                  </div>
-                </div>
-                <span class="level-text">{{ skill.level }}%</span>
-              </div>
             </div>
             @if (skill.type) {
             <div class="skill-meta">
@@ -103,56 +69,6 @@
           </div>
           }
         </div>
-      </div>
-
-      <!-- Outils -->
-      <div class="skill-category" data-animate="fade-up" data-delay="300">
-        <div class="category-header">
-          <h3>Outils & Logiciels</h3>
-          <div class="category-pulse"></div>
-        </div>
-        <div class="skills-list compact">
-          @for (tool of toolSkills; track tool.name; let i = $index) {
-          <div class="tool-badge" data-animate="zoom-in" [attr.data-delay]="i * 80 + 600"
-            (mouseenter)="animateTool($event, tool)" (mouseleave)="resetTool($event)">
-            <span class="tool-icon"><img [src]="tool.image" [alt]="tool.name" class="w-16 h-16 object-contain mb-2" />
-</span>
-            <span class="tool-name">{{ tool.name }}</span>
-            @if (tool.category) {
-            <span class="tool-category">{{ tool.category }}</span>
-            }
-            <div class="tool-orb"></div>
-          </div>
-          }
-        </div>
-      </div>
-    </div>
-
-    <!-- Résumé des compétences avec animations -->
-    <div class="skills-summary">
-      <div class="summary-card" data-animate="flip-left" data-delay="800">
-        <div class="summary-icon">🚀</div>
-        <div class="summary-content">
-          <h4>Full-Stack Developer</h4>
-          <p>Développement d'applications web complètes, du front-end au back-end</p>
-        </div>
-        <div class="summary-glow"></div>
-      </div>
-      <div class="summary-card" data-animate="flip-left" data-delay="900">
-        <div class="summary-icon">🎨</div>
-        <div class="summary-content">
-          <h4>UI/UX Design</h4>
-          <p>Création d'interfaces utilisateur intuitives et expériences engageantes</p>
-        </div>
-        <div class="summary-glow"></div>
-      </div>
-      <div class="summary-card" data-animate="flip-left" data-delay="1000">
-        <div class="summary-icon">🔧</div>
-        <div class="summary-content">
-          <h4>Problem Solver</h4>
-          <p>Résolution de problèmes complexes avec des solutions techniques élégantes</p>
-        </div>
-        <div class="summary-glow"></div>
       </div>
     </div>
   </div>
